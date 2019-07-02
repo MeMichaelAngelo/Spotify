@@ -1,0 +1,54 @@
+<div class="container-fluid bg-color-grey">
+  <div class="row">
+
+    <div class="col-xs-9 col-md-6 col-xl-9 header p-l">
+      <b>Welcome stranger,</b> <br>
+      I am pleased to welcome you on my site. Make yourself comfortable and find your favourite artists. You can also find top tracks of your favourite artits and list of his albums with all of tracks. <br>
+      Enjoy! :)
+    </div>
+
+    <div class="col-xs-9 col-md-6 col-xl-3 header">
+      <img src="assets/smileface.png"/>
+    </div>
+
+
+    <div class="col-xs-12 col-md-6 col-xl-3 padding-bottom-40px p-l">
+      <h1>Need some music?</h1>
+<form>
+  <input type="text" (keyup)="searchMusic()" class="form-control" placeholder="Write something..." name="searchArtist" [(ngModel)]="searchArtist">
+</form>
+    </div>
+  </div>
+
+<div class="row bg-color-grey">
+  <div *ngFor="let art of Artists" class="col-xs-12 col-md-3">
+    <div class="bg-color-purple">
+      <div class="col-xs-12 col-md-6 col-xl-3 font-color-orange">
+        <div class="title" (click)="viewArtist(art.id)">{{art.name}}</div>
+        
+        <div>
+        <img [src]="image(art.images)" width="200" height="200" class="image-center" (click)="viewArtist(art.id)"/>
+        </div>
+
+          <div class="width">
+            <strong>Genres:</strong>
+          </div>
+
+            <div class="width">
+              <span *ngFor="let genre of art.genres"> {{art.genres}}</span><br>
+            </div>
+
+              <div class="width ss">
+                <strong>Followers:</strong>
+                {{art.followers.total}}
+              </div>
+
+        <div class="width margin-bottom-20px">
+        <a [href]="art.external_urls['spotify']" width="350px">Open In Spotify</a>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+</div>

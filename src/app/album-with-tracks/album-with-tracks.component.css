@@ -1,0 +1,36 @@
+.bg{
+    background-color: rgb(241, 208, 21);
+}
+
+.distancebetween {
+    margin-top: 30px;
+}
+
+.mb{
+    margin-bottom: 40px;
+    padding-top: 80px;
+    padding-left: 100px;
+    margin-right: 10px;
+}
+
+.albumName {
+    padding-top: 30px;
+    font-size: 36px;
+    color: rgb(45, 102, 50);
+    font-weight: bold;
+}
+
+.left {
+    padding-left: 100px;
+}
+
+.songname {
+    color: rgb(214, 36, 161);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.borderbottom {
+    border-bottom: 3px solid black;
+    width: 100%;
+}

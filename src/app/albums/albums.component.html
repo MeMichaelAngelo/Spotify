@@ -1,0 +1,46 @@
+<div class="container-fluid top">
+    <div class="row margin-bottom-50">
+
+            <div class="col-xs-6 md-3">
+                    <img [src]="image(Artists.images)" width="300" height="300"/>
+            </div>
+
+            <span class="col-xs-6 md-9 artist">
+                {{Artists.name}} <br>
+                <span class="link">
+                <a [href]="Artists.external_urls['spotify']">Open in Spotify</a>
+                </span>
+            </span>
+
+            
+            
+            
+
+    </div>
+    
+    <div class="row">
+
+    <div class="col-xs-12 col-md-6 bgcolor" *ngFor="let album of Albums">
+
+         <div class="row">   
+                <div class="col-xs-3 col-sm-4 col-md-7 no-gutters">
+                    <img [src]="image(album.images)" width="200" height="200"/>
+                </div>
+        
+
+                
+                 <div class="col-xs-9 col-sm-8 col-md-5 no-gutters">
+                        <div class="text">{{album.name}}<br></div>
+                        <div class="text">Release Date: {{album.release_date}}<br></div>
+                        <span><button type="button" class="btn btn-outline-success" (click)="moveToAlbumWithTracks(album.id)">Show all songs</button></span>
+                </div>
+            
+                
+        </div>
+
+
+
+    </div>
+
+</div>
+</div>

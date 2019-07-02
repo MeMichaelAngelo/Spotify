@@ -1,0 +1,28 @@
+<div class="container-fluid bg">
+  <div class="row">
+
+   <div class="col-xs-12 col-md-6 mb">
+ <img [src]="image(RealAlbums.images)" width="400" height="400"/><br>
+      <div class="albumName">
+         Album Name: {{RealAlbums.name}}
+      </div>
+   </div>
+
+   <div  class="col-xs-12 col-md-6 col-xl-5">
+    <div *ngFor="let smth of TracksOfAlbums">
+
+         <div class="col-md-6 col-xl-6 distancebetween songname">
+      {{smth.track_number}}. {{smth.name}}<br>
+         Time: {{smth.duration_ms | date:'m:ss'}}<br>
+         <a [href]="smth.external_urls['spotify']">Full Version here!</a>
+        </div>
+
+        <div class="col-md-6 col-xl-6 borderbottom">
+         <audio controls>
+            <source [src]="smth.preview_url" type="audio/mpeg">
+         </audio>
+        </div>
+    </div>
+   </div>
+  </div>
+</div>

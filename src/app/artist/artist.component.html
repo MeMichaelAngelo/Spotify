@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+
+      <div class="image col-xs-12 col-md-6 col-xl-4">
+    <img [src]="image(Artists.images)" width="400" height="400"/>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-xl-8">
+      <div class="artist">
+        <strong><span>{{Artists.name}}</span></strong>
+      </div>
+      
+      <div class="padding-top-30px">
+        <strong>Genres: </strong>
+        <span>{{Artists.genres}}</span>
+      </div><br><br>
+
+      <div class="padding-top-30px">
+        <strong>Watch thier albums: </strong>
+        <span><button class="btn btn-outline-dark btn-lg" (click)="viewAlbums(Artists.id)">Click here</button></span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-12">
+        <div *ngFor="let album of ArtistsAlbums">
+        
+          <div class="demotracks col-xs-12">
+            
+              <div class="margin-left">
+            <div class="fontcolor">{{album.name}}<br></div>
+              </div>
+        
+            <div class="margin-left">
+          <audio controls>
+            <source [src]="album.preview_url" type="audio/mpeg">
+          </audio>
+        </div>
+
+          </div>
+        </div>
+      </div>
+  
+  </div>
+</div>
